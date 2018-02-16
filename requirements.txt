@@ -1,0 +1,5 @@
+psycopg2
+munch
+pyyaml
+SQLAlchemy==1.2.2
+alembic==0.9.7
