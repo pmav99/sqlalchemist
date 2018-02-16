@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# module: edgar/__init__.py
+# module: pg/__init__.py
 # author: Panagiotis Mavrogiorgos <pmav99,gmail>
 
 import os
