@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:10-alpine
+    restart: always
+    ports:
+      - $PG_HOST:$PG_PORT:5432
+    environment:
+      POSTGRES_USER: $PG_USER
+      POSTGRES_PASSWORD: $PG_PASS
+      POSTGRES_DB: $PG_DB
+    volumes:
+      - pg-volume:/var/lib/postgresql/data
+
+volumes:
+  pg-volume:

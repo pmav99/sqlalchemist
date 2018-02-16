@@ -2,7 +2,7 @@
 # module: edgar/__init__.py
 # author: Panagiotis Mavrogiorgos <pmav99,gmail>
 
-import shutil
+import os
 import logging.config
 import pathlib
 
@@ -21,7 +21,18 @@ _CONFIG = None
 
 def apply_types(config):
     """ This is a hack, but having e.g. paths as Pathlib objects is convenient... :P """
-    for section  in ("directories", "files"):
+    # load env variables
+    for section, envs in config.env_vars.items():
+        if section not in config:
+            config[section] = munch.Munch()
+        for env in envs:
+            config[section][env.lower()] = os.environ.get(env)
+    # connection_string
+    if "database" in config:
+        config.database["conn_str"] = "postgresql://{user}:{pass}@{host}:{port}/{db}".format(**config.database)
+    print(config.database.conn_str)
+    # convert paths to pathlib objects.
+    for section in ("directories", "files"):
         if section in config:
             for key, value in config.directories.items():
                 config.directories[key] = ROOT_DIR / value
