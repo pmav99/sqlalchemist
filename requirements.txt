@@ -1,6 +1,8 @@
 psycopg2
 munch
+pgcli
 pyyaml
+ipython
 click==6.7
 SQLAlchemy==1.2.2
 alembic==0.9.7
