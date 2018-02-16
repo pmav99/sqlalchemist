@@ -3,6 +3,7 @@ munch
 pgcli
 pyyaml
 ipython
+pytest
 click==6.7
 SQLAlchemy==1.2.2
 alembic==0.9.7
