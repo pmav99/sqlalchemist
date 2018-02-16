@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: $PG_PASS
       POSTGRES_DB: $PG_DB
     volumes:
-      - pg-volume:/var/lib/postgresql/data
+      - pg-data:/var/lib/postgresql/data
 
 volumes:
-  pg-volume:
+  pg-data:
