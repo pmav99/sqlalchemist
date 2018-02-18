@@ -5,11 +5,11 @@ services:
     image: postgres:10-alpine
     restart: always
     ports:
-      - $PG_HOST:$PG_PORT:5432
+      - $HOST:$PORT:5432
     environment:
-      POSTGRES_USER: $PG_USER
-      POSTGRES_PASSWORD: $PG_PASS
-      POSTGRES_DB: $PG_DB
+      POSTGRES_USER: $USER
+      POSTGRES_PASSWORD: $PASS
+      POSTGRES_DB: $DB
     volumes:
       - pg-data:/var/lib/postgresql/data
 
