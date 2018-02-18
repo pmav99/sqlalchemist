@@ -19,14 +19,22 @@ CONFIG_FILE = (ROOT_DIR / "config.yaml").resolve()
 _CONFIG = None
 
 
+_ENV_VARS = {
+    "database": ["HOST", "PORT", "USER", "PASS", "DB"],
+}
+
+
 def apply_types(config):
     """ This is a hack, but having e.g. paths as Pathlib objects is convenient... :P """
     # load env variables
-    for section, envs in config.env_vars.items():
+    for section, envs in _ENV_VARS.items():
         if section not in config:
             config[section] = munch.Munch()
         for env in envs:
-            config[section][env.lower()] = os.environ.get(env)
+            value = os.environ.get(env)
+            if value is None:
+                raise ValueError("You need to define '%s' env variable!" % env)
+            config[section][env.lower()] = value
     # connection_string
     if "database" in config:
         config.database["conn_str"] = "postgresql://{user}:{pass}@{host}:{port}/{db}".format(**config.database)

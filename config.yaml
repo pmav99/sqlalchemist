@@ -1,15 +1,3 @@
-
-env_vars:
-  database:
-    - HOST
-    - PORT
-    - USER
-    - PASS
-    - DB
-
-#database:
-  #conn_str: postgresql://pguser:example@0.0.0.0:5432/pgdb
-
 logging:
   version: 1
   disable_existing_loggers: true
