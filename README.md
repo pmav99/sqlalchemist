@@ -61,7 +61,7 @@ alembic revision --autogenerate -m "Add person table."
 You can then inspect the migration code (i.e. python) with
 
 ``` bash
-cat /migrations/versions*
+cat migrations/versions/*
 ```
 
 and the resultant SQL code with:
