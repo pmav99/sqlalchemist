@@ -2,7 +2,9 @@
 
 Both SQLAlchemy and Alembic are great tools, but they have a relatively steep learning curve.
 Furthermore, in order to get started you need to do a bunch of steps which are a bit repetitive
-(e.g. update `env.py`) which means that testing stuff can be a bit tiresome.
+(e.g. [the naming conventions
+boilerplate](http://alembic.zzzcomputing.com/en/latest/naming.html#integration-of-naming-conventions-into-operations-autogenerate),
+updating `env.py`) which means that testing stuff can be a bit tiresome.
 
 What I mainly wanted was a throwaway project/db which I could use to learn the ins and outs without
 having to bother with the complexity of a real-world code-base.
@@ -40,8 +42,9 @@ prompt you for a password.
 
 Whatever you like?!?!
 
-In this repo we have already taken care of the first steps of the alembic tutorial.
-This means that we have already run:
+In this repo we have already taken care of the first steps of the [alembic
+tutorial](http://alembic.zzzcomputing.com/en/latest/tutorial.html).  This means that we have already
+run:
 
 - `alembic init migrations`
 - We have already created an SQLAlchemy Base
