@@ -30,7 +30,6 @@ def apply_types(config):
     # connection_string
     if "database" in config:
         config.database["conn_str"] = "postgresql://{user}:{pass}@{host}:{port}/{db}".format(**config.database)
-    print(config.database.conn_str)
     # convert paths to pathlib objects.
     for section in ("directories", "files"):
         if section in config:
