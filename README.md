@@ -6,8 +6,8 @@ Furthermore, in order to get started you need to do a bunch of steps which are a
 boilerplate](http://alembic.zzzcomputing.com/en/latest/naming.html#integration-of-naming-conventions-into-operations-autogenerate),
 updating `env.py`) which means that testing stuff can be a bit tiresome.
 
-What I mainly wanted was a throwaway project/db which I could use to learn the ins and outs without
-having to bother with the complexity of a real-world code-base.
+What I mainly wanted was a throwaway project/db which I could use to learn the ins and outs of
+models and migrations without having to bother with the complexity of a real-world code-base.
 
 Tip: Pull Requests welcome!
 
