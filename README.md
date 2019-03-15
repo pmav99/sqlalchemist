@@ -104,12 +104,12 @@ Running the following commands should get rid of the database instance and its d
 
 ``` bash
 docker-compose rm --stop --force
-docker volume rm sqlalchemyplayground_pg-data
+docker volume rm sqlalchemist_pg-data
 ```
 
 If you also want to remove the existing migrations, you can do it with:
 
 ``` bash
-rm -rf migrations/versions/*
+rm -rf migrations/versions/*.py
 ```
 
