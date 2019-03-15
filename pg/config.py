@@ -20,7 +20,7 @@ _CONFIG = None
 
 
 _ENV_VARS = {
-    "database": ["HOST", "PORT", "USER", "PASS", "DB"],
+    "database": ["DBHOST", "DBPORT", "DBUSER", "DBPASS", "DBNAME"],
 }
 
 
@@ -37,7 +37,7 @@ def apply_types(config):
             config[section][env.lower()] = value
     # connection_string
     if "database" in config:
-        config.database["conn_str"] = "postgresql://{user}:{pass}@{host}:{port}/{db}".format(**config.database)
+        config.database["conn_str"] = "postgresql://{dbuser}:{dbpass}@{dbhost}:{dbport}/{dbname}".format(**config.database)
     # convert paths to pathlib objects.
     for section in ("directories", "files"):
         if section in config:

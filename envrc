@@ -1,5 +1,5 @@
-export HOST='0.0.0.0'
-export PORT=65432
-export USER='pguser'
-export PASS=''
-export DB='pgdb'
+export DBHOST='0.0.0.0'
+export DBPORT=65432
+export DBUSER='pguser'
+export DBPASS=''
+export DBNAME='pgdb'

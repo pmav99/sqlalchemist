@@ -30,7 +30,7 @@ docker-compose up -d
 3. Try connecting to the database:
 
 ``` bash
-pgcli -U $USER -h $HOST -p $PORT $DB
+pgcli -U $DBUSER -h $DBHOST -p $DBPORT $DBNAME
 ```
 
 If you defined `$PASS` on `envrc` then you might need to call `pgcli` with `-W` so that it will
@@ -78,7 +78,7 @@ alembic upgrade +1
 
 If you now connect to `pgcli`, you can test that the new table exists:
 ```
-pgcli -U $USER -h $HOST -p $PORT $DB
+pgcli -U $DBUSER -h $DBHOST -p $DBPORT $DBNAME
 # and then on the pgcli console:
 \dt
 # and again on the pgcli console:
