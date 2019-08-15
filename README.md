@@ -1,13 +1,14 @@
 ## Rationale
 
-Both SQLAlchemy and Alembic are great tools, but they have a relatively steep learning curve.
-Furthermore, in order to get started you need to do a bunch of steps which are a bit repetitive
-(e.g. [the naming conventions
+Both SQLAlchemy and Alembic are great tools, but they have a relatively steep learning
+curve.  Furthermore, in order to get started you need to do a bunch of steps which are
+a bit repetitive (e.g. [the naming conventions
 boilerplate](http://alembic.zzzcomputing.com/en/latest/naming.html#integration-of-naming-conventions-into-operations-autogenerate),
 updating `env.py`) which means that testing stuff can be a bit tiresome.
 
-What I mainly wanted was a throwaway project/db which I could use to learn the ins and outs of
-models and migrations without having to bother with the complexity of a real-world code-base.
+What I mainly wanted was a throwaway project/db which I could use to learn the ins and
+outs of models and migrations without having to bother with the complexity of
+a real-world code-base.
 
 Tip: Pull Requests welcome!
 
@@ -33,8 +34,8 @@ docker-compose up -d
 pgcli -U $DBUSER -h $DBHOST -p $DBPORT $DBNAME
 ```
 
-If you defined `$PASS` on `envrc` then you might need to call `pgcli` with `-W` so that it will
-prompt you for a password.
+If you defined `$PASS` on `envrc` then you might need to call `pgcli` with `-W` so that
+it will prompt you for a password.
 
 4. If you can connect, you are ready to start using SQLAlchemy and Alebmic!
 
@@ -43,16 +44,16 @@ prompt you for a password.
 Whatever you like?!?!
 
 In this repo we have already taken care of the first steps of the [alembic
-tutorial](http://alembic.zzzcomputing.com/en/latest/tutorial.html).  This means that we have already
-run:
+tutorial](http://alembic.zzzcomputing.com/en/latest/tutorial.html).  This means that we
+have already run:
 
 - `alembic init migrations`
 - We have already created an SQLAlchemy Base
 - configured `migrations/env.py` to use our application's `Base`.
 - defined a sample model at `pg/models/definitions.py`.
 
-So, if you want to jump straight into the fun you can start for example by generating your first
-migration with:
+So, if you want to jump straight into the fun you can start for example by generating
+your first migration with:
 
 ``` bash
 alembic revision --autogenerate -m "Add person table."
