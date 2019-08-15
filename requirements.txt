@@ -1,7 +1,7 @@
 psycopg2>=2,<3 --no-binary psycopg2
 munch
 pgcli
-pyyaml
+ruamel-yaml
 ipython
 pytest
 click==6.7

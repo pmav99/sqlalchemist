@@ -6,12 +6,9 @@ import os
 import logging.config
 import pathlib
 
-import yaml
-try:
-    from yaml import CLoader as YLoader
-except ImportError:
-    from yaml import YLoader
+import ruamel.yaml
 import munch
+
 
 # paths
 ROOT_DIR = pathlib.Path(__file__).parent.parent.resolve()
@@ -46,17 +43,18 @@ def apply_types(config):
     return config
 
 
-def load_config(config_file):
-    with open(config_file, "rb") as fd:
-        config = yaml.load(fd, Loader=YLoader)
-    return config
+def load_yaml(path):
+    path = pathlib.Path(path)
+    yml = ruamel.yaml.YAML(typ="safe", pure=True)  # 'safe' load and dump
+    data = yml.load(path.read_text())
+    return data
 
 
 def get_config():
     """ Return the app's configuration. """
     global _CONFIG
     if _CONFIG is None:
-        config = munch.munchify(load_config(CONFIG_FILE))
+        config = munch.munchify(load_yaml(CONFIG_FILE))
         config = apply_types(config)
         _CONFIG = config
     return _CONFIG
