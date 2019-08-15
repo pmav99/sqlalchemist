@@ -1,9 +1,0 @@
-psycopg2>=2,<3 --no-binary psycopg2
-munch
-pgcli
-ruamel-yaml
-ipython
-pytest
-click==6.7
-SQLAlchemy==1.2.2
-alembic==0.9.7
