@@ -31,7 +31,9 @@ docker-compose up -d
 3. Try connecting to the database:
 
 ``` bash
-pgcli -U $DBUSER -h $DBHOST -p $DBPORT $DBNAME
+pgcli -U "${DBUSER}" -h "${DBHOST}" -p "${DBPORT}" "${DBNAME}"
+# or
+pgcli "${DB_CONNECTION_STRING}"
 ```
 
 If you defined `$PASS` on `envrc` then you might need to call `pgcli` with `-W` so that

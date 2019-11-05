@@ -1,5 +1,6 @@
 export DBHOST='0.0.0.0'
 export DBPORT=65432
 export DBUSER='pguser'
-export DBPASS=''
+export DBPASS='changeme'
 export DBNAME='pgdb'
+export DB_CONNECTION_STRING="postgres://${DBUSER}:${DBPASS}@${DBHOST}:${DBPORT}/${DBNAME}"
