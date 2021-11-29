@@ -7,17 +7,17 @@ from ..config import get_config
 
 
 NAMING_CONVENTION = {
-    "ix": 'ix_%(column_0_label)s',
+    "ix": "ix_%(column_0_label)s",
     "uq": "uq_%(table_name)s_%(column_0_name)s",
     "ck": "ck_%(table_name)s_%(constraint_name)s",
     "fk": "fk_%(table_name)s_%(column_0_name)s_%(referred_table_name)s",
-    "pk": "pk_%(table_name)s"
+    "pk": "pk_%(table_name)s",
 }
 
 
 def get_engine():
     config = get_config()
-    engine = sa.create_engine(get_config().database.conn_str,  echo=True)
+    engine = sa.create_engine(config.database.DB_CONNECTION_STRING, echo=True)
     return engine
 
 
@@ -30,7 +30,6 @@ def get_base(engine):
 engine = get_engine()
 Base = get_base(engine)
 Session = sessionmaker(bind=engine)
-
 
 
 __all__ = [

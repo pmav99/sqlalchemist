@@ -1,9 +1,7 @@
 import pytest
 import psycopg2
 
-from ..config import get_config
-from ..models import Session
-
+from sqlalchemist import get_config
 
 
 @pytest.fixture
@@ -13,9 +11,9 @@ def config():
 
 def test_configuration(config):
     assert "database" in config
-    assert "conn_str" in config.database
+    assert "DB_CONNECTION_STRING" in config.database
 
 
 def test_connection(config):
     config = get_config()
-    psycopg2.connect(config.database.conn_str)
+    psycopg2.connect(config.database.DB_CONNECTION_STRING)

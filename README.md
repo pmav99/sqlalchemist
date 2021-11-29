@@ -103,12 +103,10 @@ definitions etc.
 
 ## Reset database
 
-Running the following commands should get rid of the database instance and its data
+Running the following command should get rid of the database instance and its data
 
 ``` bash
-docker-compose rm --stop --force -v
-docker volume rm sqlalchemist_pg-data
-rm -rf migrations/versions/*.py
+docker-compose down -v
 ```
 
 If you also want to remove the existing migrations, you can do it with:
@@ -116,4 +114,3 @@ If you also want to remove the existing migrations, you can do it with:
 ``` bash
 rm -rf migrations/versions/*.py
 ```
-

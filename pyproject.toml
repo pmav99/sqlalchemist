@@ -6,15 +6,16 @@ authors = ["Panos Mavrogiorgos <pmav99@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.7"
-SQLalchemy = "^1.3"
+SQLalchemy = "^1.4"
 alembic = "^1.0"
-"ruamel.yaml" = "^0.16.1"
-munch = "^2.3"
+ruyaml = "^0.20"
+munch = "^2.5.0"
 
 [tool.poetry.dev-dependencies]
-pgcli = "^2.1"
-pytest = "^5.0"
-bump2version = "^0.5.10"
+pgcli = "*"
+pytest = "^6"
+bump2version = "^1.0"
+black = "^21.11b1"
 
 [build-system]
 requires = ["poetry>=0.12"]

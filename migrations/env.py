@@ -5,12 +5,12 @@ from sqlalchemy import engine_from_config, pool
 from logging.config import fileConfig
 
 sys.path.append("./")
-import pg
+import sqlalchemist
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option("sqlalchemy.url", pg.get_config().database.conn_str)
+config.set_main_option("sqlalchemy.url", sqlalchemist.get_config().database.DB_CONNECTION_STRING)
 
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
@@ -20,7 +20,7 @@ config.set_main_option("sqlalchemy.url", pg.get_config().database.conn_str)
 # for 'autogenerate' support
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
-target_metadata = pg.models.Base.metadata
+target_metadata = sqlalchemist.models.Base.metadata
 
 # other values from the config, defined by the needs of env.py,
 # can be acquired:

@@ -4,7 +4,7 @@ from .meta import Base
 
 
 class Person(Base):
-    __tablename__ = 'person'
+    __tablename__ = "person"
 
     id = sa.Column(sa.Integer, primary_key=True)
     name = sa.Column(sa.String)
